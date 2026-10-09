@@ -1,0 +1,176 @@
+/* Crop Doctor Custom Agricultural Styles & Animations */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  
+  /* Primary Botanical Greens */
+  --green-primary: #235d3a;
+  --green-hover: #1b4a2e;
+  --green-light: #e8f5e9;
+  --green-accent: #34d399;
+  --green-emerald: #10b981;
+  --green-dark: #0f291e;
+
+  /* Earth Browns & Terracotta */
+  --earth-soil: #4a2e18;
+  --earth-clay: #7c4a27;
+  --earth-amber: #b45309;
+  --earth-sand: #d4a373;
+  --earth-border: #e6ded6;
+
+  /* Cream & Neutral Linen */
+  --cream-bg: #faf7f2;
+  --cream-card: #ffffff;
+  --cream-surface: #f4ede4;
+  --cream-muted: #8c827a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-bg);
+  color: #262422;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-serif-heading {
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4ede4;
+}
+::-webkit-scrollbar-thumb {
+  background: #a89f91;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c4a27;
+}
+
+/* Agricultural Grain Texture Overlay */
+.agri-pattern {
+  background-color: #faf7f2;
+  background-image: radial-gradient(#d4a373 0.75px, transparent 0.75px), radial-gradient(#235d3a 0.75px, #faf7f2 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-opacity: 0.15;
+}
+
+/* Leaf Scanner Laser Animation */
+@keyframes scanLaser {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 95%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.scanner-laser {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #22c55e, #86efac, #22c55e, transparent);
+  box-shadow: 0 0 15px 4px rgba(34, 197, 94, 0.65), 0 0 30px 8px rgba(74, 222, 128, 0.4);
+  animation: scanLaser 2.6s ease-in-out infinite;
+  z-index: 20;
+}
+
+/* Scanning Grid Overlay */
+.scanner-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(34, 197, 94, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 197, 94, 0.15) 1px, transparent 1px);
+}
+
+/* Gentle Pulse for Badges */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(35, 93, 58, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(35, 93, 58, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Glassmorphism for Agricultural Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(228, 218, 206, 0.85);
+}
+
+.glass-card-dark {
+  background: rgba(15, 41, 30, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+/* Crop Leaf Bounding Box */
+@keyframes lesionPulse {
+  0%, 100% {
+    border-color: rgba(239, 68, 68, 0.9);
+    background-color: rgba(239, 68, 68, 0.15);
+  }
+  50% {
+    border-color: rgba(249, 115, 22, 1);
+    background-color: rgba(249, 115, 22, 0.28);
+  }
+}
+
+.lesion-marker {
+  position: absolute;
+  border: 2px dashed rgba(239, 68, 68, 0.9);
+  border-radius: 8px;
+  animation: lesionPulse 2s infinite ease-in-out;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.lesion-marker:hover {
+  transform: scale(1.05);
+  border-color: #ef4444;
+}
+
+/* Custom Tab Pill Active States */
+.field-tab.active {
+  background-color: #235d3a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(35, 93, 58, 0.25);
+}
+
+/* Printing styles for Agri-Prescription */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #prescriptionModal, #prescriptionModal * {
+    visibility: visible;
+  }
+  #prescriptionModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+}
