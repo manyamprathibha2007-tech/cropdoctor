@@ -1,4 +1,5 @@
 # 🌱 Crop Doctor — AI-Powered Crop Disease Assistant
+website url:https://cropdoctor-kappa.vercel.app/
 
 > **“Healthy crops. Better harvests.”**  
 > An AI-powered agricultural health assistant that helps farmers identify crop diseases from leaf photos, receive personalized treatment guidance (both organic and conventional), and monitor micro-climate pathogen risk.
